@@ -1,0 +1,28 @@
+﻿<UserControl x:Class="DXBindingExample.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DXBindingExample"
+             xmlns:v="clr-namespace:DXBindingExample.View"
+             xmlns:vm="clr-namespace:DXBindingExample.ViewModel"
+             xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+             mc:Ignorable="d" d:DesignHeight="600" d:DesignWidth="800"
+             d:DataContext="{dxmvvm:ViewModelSource local:MainViewModel}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox ItemsSource="{DXBinding Modules}" SelectedItem="{DXBinding SelectedModule, UpdateSourceTrigger=PropertyChanged}" Margin="5">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="Content" Value="{Binding Title}"/>
+                </Style>
+            </ListBox.ItemContainerStyle>
+        </ListBox>
+        <ScrollViewer Grid.Column="1" Margin="5" HorizontalContentAlignment="Stretch" VerticalAlignment="Top" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
+            <ContentControl Content="{DXBinding SelectedModule}" ContentTemplateSelector="{v:ViewSelector}"/>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
