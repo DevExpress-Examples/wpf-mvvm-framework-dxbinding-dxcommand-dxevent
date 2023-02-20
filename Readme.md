@@ -10,6 +10,26 @@ This example demonstrates use cases of the [DXBinding](https://docs.devexpress.c
 
 ![image](https://user-images.githubusercontent.com/65009440/220123866-22f8342d-6790-4e10-a9f3-e168ef6c6541.png)
 
+* The [DXBinding](https://docs.devexpress.com/WPF/115771/mvvm-framework/dxbinding/dxbinding) allows you to use expressions inside binding paths.
+
+  ```xaml
+  Text="{DXBinding 'StringValue+DoubleValue.ToString()', Mode=OneWay}"
+  
+  ```
+
+* With the [DXCommand](https://docs.devexpress.com/WPF/115776/mvvm-framework/dxbinding/dxcommand), you can bind a command property and define methods to call right in xaml.
+
+  ```xaml
+  Command="{DXCommand Execute='$MessageBox.Show(@e(message).Text, @e(title).Text)',
+                      CanExecute='@e(isEnabled).IsChecked'}"
+  ```
+  
+* The [DXEvent](https://docs.devexpress.com/WPF/115778/mvvm-framework/dxbinding/dxevent) allows you to bind an event to methods.
+
+  ```xaml
+  Click="{DXEvent '$MessageBox.Show($string.Format(@r(clickBindingStringFormat), @r(clickBinding)), Title)'}"
+  ```
+
 ## Files to Review
 
 * [BasicExpressionsView.xaml](./CS/DXBindingExample/View/BasicExpressionsView.xaml) (VB: [BasicExpressionsView.xaml](./VB/DXBindingExample/View/BasicExpressionsView.xaml))
