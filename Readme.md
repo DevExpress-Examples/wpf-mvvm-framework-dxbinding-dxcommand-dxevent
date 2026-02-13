@@ -48,7 +48,7 @@ This example demonstrates use cases of the [DXBinding](https://docs.devexpress.c
 * [DXEvent](https://docs.devexpress.com/WPF/115778/mvvm-framework/dxbinding/dxevent)
 * [Language Specification and Limitations](https://docs.devexpress.com/WPF/115777/mvvm-framework/dxbinding/language-specification)
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=wpf-mvvm-framework-dxbinding-dxcommand-dxevent&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=wpf-mvvm-framework-dxbinding-dxcommand-dxevent&~~~was_helpful=no)
 
